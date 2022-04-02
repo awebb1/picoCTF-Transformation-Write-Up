@@ -63,4 +63,4 @@ picoCTF{16_bits_inst34d_of_8_04c0760d}
 
 ## Ending Thoughts
 
-This was tricky for me, as I had said. It's dealing with bitwise shifting and methods I had never worked with. I got a good amount of valuable info and want to look more into bitwise shifting and exactly WHY this works the way it does. I was able to come to a good enough understandin just by trial and error. Even though it ended up being rather straight forward it was a great learning tool for me and enjoyable as well!
+This was tricky for me, as I had said. It's dealing with bitwise shifting and methods I had never worked with. I got a good amount of valuable info and want to look more into bitwise shifting and exactly WHY reverse shifting the encoded value would give me one of the original characters. I was able to come to a good enough understanding just by trial and error allowing me to solve it. Even though it ended up being rather straight forward it was a great learning tool for me and enjoyable as well!
