@@ -41,6 +41,8 @@ After seeing how close the values were it clicked, simply subtracting the unicod
 
 I got to coding the decoder, after a few minutes I had the following written:
 
+## Solution
+
 ```python
 encodedFlag = '灩捯䍔䙻ㄶ形楴獟楮獴㌴摟潦弸弰㑣〷㘰摽'
 decodedFlag = ''
@@ -53,7 +55,7 @@ for i in encodedFlag:
 print(decodedFlag)
 
 ```
-Very straight forward. All it does is loop through each substring of the encodedFlag (which is the enc file the CTF provided). First it reverses the shift to isolate the first character, then it shifts the result like the original equation, and subtracts it from the unicode value of the current encoded character to build the decoded string!
+Very straight forward. All it does is loop through each substring of the encodedFlag (which is the enc file the CTF provided). First it reverses the shift to isolate the first character, then it shifts the result like the original equation, and subtracts it from the unicode value of the current encoded character to isolate the second character then final adds them into our decodedFlag variable to build the decoded flag!
 
 Once it's ran you get the flag.
 
@@ -61,6 +63,12 @@ Once it's ran you get the flag.
 
 picoCTF{16_bits_inst34d_of_8_04c0760d}
 
+## Explanation
+
+The reason this solution works is pretty simple if you understand how binary and bitwise shifting works. Due to the initial flag letter value being 8 bits, when shifted over to the left by 8 you add an additional 8 bits to the right going from 1110000 (which is p, since the unicode of p is 112) to 111000000000000, it added 8 more bits. Any alphanumeric values in unicode will not be bigger than 8 bits. So when you add the unicode value of 'i' which is 105 in decimal, and 1101001 in binary you end up with 11100001101001. You can see both p and i disctinctly in this due to each one being 8 bits respectively, the first half is 'p' 1110000, 1101001 is 'i'. Even though we now have an entirely new decimal value (28777, which is the encoded value we see '灩') if we were to reverse the shift from earlier we would effectively cut off the bits that make up the 'i' and reveal the initial starting value of 'p' (we would remove the ending 1101001 from 11100001101001 leaving us with 1110000). In order to isolate the 'i', we'd just need to separate the 'p' value, which we do by simply subtracting the unicode value of the shifted 'p' (28672, which is 111000000000000 in binary) from the unicode value of '灩' (28777, which is 11100001101001 in binary.) we end up the unicode 105 (we 'zeroed out' the initial 111 leaving us with only 1101001) which is 'i'.
+
+So in summary, we isolate the two halves of the encoded value's bits to isolate the 2 values of the flag that each one contains. Understanding this logic, instead of my orignal solution, you could also get the binary of an encoded value. convert it to a string, then separate the last 8 substrings, and convert them both back up to readable characters.
+
 ## Ending Thoughts
 
-This was tricky for me, as I had said. It's dealing with bitwise shifting and methods I had never worked with. I got a good amount of valuable info and want to look more into bitwise shifting and exactly WHY reverse shifting the encoded value would give me one of the original characters. I was able to come to a good enough understanding just by trial and error allowing me to solve it. Even though it ended up being rather straight forward it was a great learning tool for me and enjoyable as well!
+This was tricky for me, as I had said. It's dealing with bitwise shifting and methods I had never worked with. I got a good amount of valuable info and learned how bitwise shifting works. Even though it ended up being rather straight forward it was a great learning tool for me and enjoyable as well!
