@@ -14,7 +14,7 @@ I wonder what this really is... [enc](./enc)
 
 ## Intro
 
-It's be a while since I've had to understand someone else's code. This problem took me more time than I liked to admit, but working through it I was able to revive my problem solving skills and was very satisfied with this problem. It exposed me to something new and was pretty enjoyable!
+It's been a while since I've had to understand someone else's code. This problem took me more time than I liked to admit, but working through it I was able to revive my problem solving skills and was very satisfied with this problem's concepts. It exposed me to something new and was pretty enjoyable!
 
 ## Approach
 
