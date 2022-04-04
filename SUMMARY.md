@@ -33,7 +33,7 @@ A 'p' came out, realizing this is probably the first letter of the flag, I focus
 ```python
 ord(flag[i + 1])
 ```
-Quickly seeing that this can't simply have an operator swap like the previous portion due to index restraints, I focused back on the fact the 2 halves were being summed. I compared the value of (ord('p') << 8) to to ord('灩'). 
+Quickly seeing that this can't simply have an operator swap like the previous portion due to index restraints, I focused back on the fact the 2 halves were being summed. I compared the value of (ord('p') << 8) to ord('灩'). 
 
 >>(ord('p') << 8) = 28672 and ord('灩') = 28777. 
 
