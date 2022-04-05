@@ -55,7 +55,7 @@ for i in encodedFlag:
 print(decodedFlag)
 
 ```
-Very straight forward. All it does is loop through each substring of the encodedFlag (which is the enc file the CTF provided). First it reverses the shift to isolate the first character, then it shifts the result like the original equation, and subtracts it from the unicode value of the current encoded character to isolate the second character then final adds them into our decodedFlag variable to build the decoded flag!
+Very straight forward. All it does is loop through each substring of the encodedFlag (which is the enc file the CTF provided). First it reverses the shift to isolate the first character, then it shifts the result like the original equation, and subtracts it from the unicode value of the current encoded character to isolate the second character then finally adds them into our decodedFlag variable to build the decoded flag!
 
 Once it's ran you get the flag.
 
