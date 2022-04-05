@@ -37,7 +37,7 @@ Quickly seeing that this can't simply have an operator swap like the previous po
 
 >>(ord('p') << 8) = 28672 and ord('灩') = 28777. 
 
-After seeing how close the values were it clicked, simply subtracting the unicode value of the first solved character from the unicode value of the encoded character should give me a unicode for a second letter. Each encoded letter was just one ASCII letter that had it's unicode value shifted, added to the next character's unicode value, then converted back to ASCII.
+After seeing how close the values were it clicked, simply subtracting the unicode value of the first solved character from the unicode value of the encoded character should give me a unicode for a second letter. Trying to figure that out really held me up. It's very simple and obvious when reading it now, since I wasn't familiar with ord() and bitwise shifting it was just one of those situations where your mind isn't interpretting what it's seeing correctly, oh well! Each encoded letter was just one ASCII letter that had it's unicode value shifted, added to the next character's unicode value, then converted back to ASCII.
 
 I got to coding the decoder, after a few minutes I had the following written:
 
